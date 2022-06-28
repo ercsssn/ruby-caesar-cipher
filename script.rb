@@ -18,14 +18,14 @@ def caesar_cipher(string)
     end
 
 
-    # string.split("").each do |letter| 
-    #     if upper_case.include?(letter)
-    #         puts "I'm uppercase"
-    #     elsif lower_case.include?(letter)
-    #         puts "I'm lowercase"
-    #     else
-    #         puts "I'm a special character or a number"
-    #     end
-    # end
+    string.split("").each do |letter| 
+        if upper_case_hash.key?(letter)
+            puts "#{letter} = #{upper_case_hash["letter"]}"
+        elsif lower_case_hash.key?(letter)
+            puts "#{letter} = #{lower_case_hash["letter"]}"
+        else
+            puts "I'm a special character or a number"
+        end
+    end
 
 end
