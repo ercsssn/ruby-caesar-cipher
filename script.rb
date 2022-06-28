@@ -13,6 +13,11 @@ def caesar_cipher(string)
         upper_case_hash[letter] = index
     end
 
+    upper_case_hash.each do |letter,position|
+        puts "#{letter} = #{position}"
+    end
+
+
     # string.split("").each do |letter| 
     #     if upper_case.include?(letter)
     #         puts "I'm uppercase"
