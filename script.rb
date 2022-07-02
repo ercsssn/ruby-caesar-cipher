@@ -1,4 +1,4 @@
-def caesar_cipher(string)
+def caesar_cipher(string, digit)
     upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("")
     lower_case = "abcdefghijklmnopqrstuvwxyz".split("")
     upper_case_hash = Hash.new
@@ -20,11 +20,21 @@ def caesar_cipher(string)
     string.split("").each do |letter| 
         if upper_case_hash.key?(letter)
             current_pos = upper_case_hash["#{letter}"]
-            puts current_pos
+            new_pos = current_pos + digit
+            if new_pos > 25
+                wrap_pos = new_pos - 25
+            else
+                new_pos
+            end
             # puts "#{letter} = #{upper_case_hash["#{letter}"]}" 
         elsif lower_case_hash.key?(letter)
             current_pos = lower_case_hash["#{letter}"]
-            puts current_pos
+            new_pos = current_pos + digit
+            if new_pos > 25
+                wrap_pos = new_pos - 25
+            else
+                new_pos
+            end
             # puts "#{letter} = #{lower_case_hash["#{letter}"]}"
         else
             puts "I'm a special character or a number"
