@@ -13,32 +13,30 @@ def caesar_cipher(string, digit)
         upper_case_hash[letter] = index
     end
 
-    # upper_case_hash.each do |letter,position|
-    #     puts "#{letter} = #{position}"
-    # end
-
     string.split("").each do |letter| 
         if upper_case_hash.key?(letter)
             current_pos = upper_case_hash["#{letter}"]
             new_pos = current_pos + digit
             if new_pos > 25
-                wrap_pos = new_pos - 25
+                wrap_pos = (new_pos - 25) - 1
+                encrypted_string += upper_case_hash.key(wrap_pos)
             else
-                new_pos
+                encrypted_string += upper_case_hash.key(new_pos)
             end
-            # puts "#{letter} = #{upper_case_hash["#{letter}"]}" 
         elsif lower_case_hash.key?(letter)
             current_pos = lower_case_hash["#{letter}"]
             new_pos = current_pos + digit
             if new_pos > 25
-                wrap_pos = new_pos - 25
+                wrap_pos = (new_pos - 25) - 1
+                encrypted_string += lower_case_hash.key(wrap_pos)
             else
-                new_pos
+                encrypted_string += lower_case_hash.key(new_pos) 
             end
-            # puts "#{letter} = #{lower_case_hash["#{letter}"]}"
         else
-            puts "I'm a special character or a number"
+            encrypted_string += letter
         end
     end
+
+    return encrypted_string
 
 end
