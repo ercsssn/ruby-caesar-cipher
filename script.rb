@@ -42,7 +42,7 @@ def caesar_cipher(string, digit)
 
 end
 
-#TOP 1
+
 class CaesarCipher
     def translate(message, shift, result = '')
       message.each_char do |char|
@@ -60,7 +60,7 @@ class CaesarCipher
     end
   end
 
-#TOP 2
+
   def caesar_cipher(text, shift)
     for i in 0...text.length do
       char_code = text[i].ord
@@ -86,7 +86,7 @@ class CaesarCipher
   
   puts message
 
-  #TOP 3
+
   def caesar_cipher(string,shift_factor)
 
     # Split string into character array, get ascii value for each character 
